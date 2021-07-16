@@ -1,0 +1,31 @@
+<div class="new_post">
+    <%= form_with model:@post do |f| %>
+        <div class="form">
+            <%= f.label :endday %>
+            <%= f.date_field :endday %>
+        </div>
+        <div class="form">
+            <%= f.label :hoge %>
+            <%= f.datetime_field :hoge %>
+        </div>
+        <%= f.submit %>
+    <% end %>
+</div>
+
+<div class="index_post">
+    <% @posts.each do |p| %>
+        <div class="post">
+            期限：<%= p.endday %>
+        </div>
+        <div class="add_post">
+            あと（残り日）：<%= p.limit %>日
+        </div>
+        <div class="post">
+            期限2：<%= p.hoge %>
+        </div>
+        <div class="add_post">
+            あと2（残り日時）：<%= p.chinpo3 %>日<%= p.chinpo4 %>時間
+        </div>
+        -------------------------------------------------
+    <% end %>
+</div>
